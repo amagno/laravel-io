@@ -40,5 +40,5 @@ Route::get('/', function()
 
 Route::get('/queue', function()
 {
-    Queue::push('Jobs\MyFirstJob', array('message' => 'Teste'));
+     Queue::push('Jobs\MyFirstJob', ['message' => 'test']);
 });
