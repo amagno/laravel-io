@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "main-bower-files": "^1.0.1",
+    "redis": "^0.11.0",
     "socket.io": "^1.0.6"
   }
 }
