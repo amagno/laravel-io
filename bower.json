@@ -17,6 +17,7 @@
     "tests"
   ],
   "dependencies": {
-    "angularjs": "~1.2.20"
+    "angularjs": "~1.2.20",
+    "bootswatch-dist": "3.2.0-yeti"
   }
 }

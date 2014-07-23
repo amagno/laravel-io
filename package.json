@@ -13,6 +13,7 @@
     "gulp-inject": "^0.4.1"
   },
   "dependencies": {
+    "main-bower-files": "^1.0.1",
     "socket.io": "^1.0.6"
   }
 }
