@@ -1,4 +1,12 @@
 <?php
+/*
+ * Blade set Content Tags
+ *
+ *
+ */
+
+Blade::setContentTags('<%', '%>');
+Blade::setEscapedContentTags('<%%', '%%>');
 
 /*
 |--------------------------------------------------------------------------

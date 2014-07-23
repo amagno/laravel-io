@@ -14,10 +14,10 @@ gulp.task('copy', function(){
     gulp.src(mainBowerFiles()).pipe(gulp.dest(config.public_folder));
 
     gulp.src(mainBowerFiles())
-        .pipe(inject(config.scripts_file))
+        .pipe(inject(config.scripts_file, { addPrefix: "<% url('/') %>", addRootSlash: false}))
         .pipe(gulp.dest(config.views_folder));
 
     gulp.src(mainBowerFiles())
-        .pipe(inject(config.styles_file))
+        .pipe(inject(config.styles_file, { addPrefix: "<% url('/') %>", addRootSlash: false}))
         .pipe(gulp.dest(config.views_folder));
 });
