@@ -13,5 +13,17 @@
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    //var_dump(Session::all());
+
+    $redis = Redis::connection();
+
+    $session_redis = $redis->get('laravel:' . Session::getId());
+
+    Session::put('testeusername', 'alexandre');
+
+    $s = unserialize($session_redis);
+    $ss = unserialize($s);
+    var_dump($ss);
+
+    var_dump($ss['testeusername']);
 });
