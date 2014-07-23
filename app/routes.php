@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/', function()
+Route::get('/testing', function()
 {
     //var_dump(Session::all());
 
@@ -19,11 +19,26 @@ Route::get('/', function()
 
     $session_redis = $redis->get('laravel:' . Session::getId());
 
-    Session::put('testeusername', 'alexandre');
+    //Session::put('testeusername', 'alexandre');
 
     $s = unserialize($session_redis);
     $ss = unserialize($s);
     var_dump($ss);
 
-    var_dump($ss['testeusername']);
+    //var_dump($ss['testeusername']);
+});
+Route::get('/testing/exclude', function()
+{
+    Session::flush();
+    return 'ok';
+});
+
+Route::get('/', function()
+{
+    return View::make('main');
+});
+
+Route::get('/queue', function()
+{
+    Queue::push('Jobs\MyFirstJob', array('message' => 'Teste'));
 });
