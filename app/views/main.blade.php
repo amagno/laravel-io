@@ -7,7 +7,12 @@
     @include('assets.styles')
 </head>
 <body>
-<h1>Hello</h1>
+<div class="container" ng-app="ChatApp">
+    <div class="row" ng-controller="ChatController">
+
+    </div>
+</div>
+
     @include('assets.scripts')
 
 </body>
