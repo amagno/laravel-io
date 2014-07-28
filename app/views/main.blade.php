@@ -8,8 +8,8 @@
 </head>
 <body>
 <div class="container" ng-app="ChatApp">
+    <h1>Hello Main Test</h1>
     <div class="row" ng-controller="ChatController">
-
     </div>
 </div>
 

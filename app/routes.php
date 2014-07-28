@@ -42,3 +42,6 @@ Route::get('/queue', function()
 {
      Queue::push('Jobs\MyFirstJob', ['message' => 'test']);
 });
+
+
+Route::controller('/test', 'TestController');
