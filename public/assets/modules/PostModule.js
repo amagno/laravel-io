@@ -20,14 +20,26 @@ PostModule.controller('TestController', ['$scope', '$http', function($scope, $ht
                 $scope.user.errors = data;
                 console.log('Is Errors: ' + data);
             });
-    }
+    };
+
+    $('form input').on('keyup', function(){
+        $scope.user.errors = null;
+    });
 }]);
 
-PostModule.directive('ngFormGroup', function(){
+PostModule.directive('ngSendForm', function(){
     return {
         restrict: 'E',
         replace: true,
-        template: '<div class="form-group"></div>'
+        template: '<div class="form-group">' +
+                  '<label for="{{ name }}">{{ description }}</label>' +
+                  '<input type="{{ type }}" id="{{ name }}" name="{{ name }}" placeholder="{{ description }}"/>' +
+                  '</div>',
+        link: function(scope, element, attrs){
+            console.log(attrs.ngSendForm);
+            element.attr("ng-class", "{ 'has-error' : " + attrs.master  +  " }");
+            scope.root_data = attrs.master;
+        }
 
 
     };

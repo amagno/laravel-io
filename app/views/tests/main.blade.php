@@ -26,8 +26,8 @@
                     <button type="submit" class="btn btn-default">Submit</button>
 
                 </form>
+                <ng-send-form master="teste"></ng-send-form>
 
-                <ng-form-group></ng-form-group>
             </div>
         </div>
     </div>
