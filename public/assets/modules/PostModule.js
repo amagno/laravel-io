@@ -25,6 +25,14 @@ PostModule.controller('TestController', ['$scope', '$http', function($scope, $ht
     $('form input').on('keyup', function(){
         $scope.user.errors = null;
     });
+    $scope.testefu = function(){
+        $scope.user = {
+            errors: {
+                email: true
+            }
+        };
+        console.log($scope.user);
+    };
 }]);
 
 PostModule.directive('ngSendForm', function(){
@@ -42,5 +50,27 @@ PostModule.directive('ngSendForm', function(){
         }
 
 
-    };
+    }
+});
+
+PostModule.directive('testDirective', function(){
+    return {
+        restrict: 'E',
+        replace: true,
+        template: '<div class="form-group">' +
+        '<button ng-click="click()">{{ name }}</button> {{ model }}</div>',
+        scope: {
+            model: '=',
+            name: '@',
+            click: '&'
+        },
+        link: function(scope, element, attrs){
+            scope.$watch('model', function(model){
+                if(model){
+                    element.addClass('has-error');
+                }
+            });
+        }
+
+    }
 });
