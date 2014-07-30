@@ -8,8 +8,12 @@
 
 <div ng-app="PostModule">
     <div ng-controller="TestController">
-        <test-directive model="user.errors.email" name="email" click="testefu()"></test-directive>
-        <div class="form-group" ng-class="{ 'has-error' : user.errors.email }"></div>
+        <form action="" name="teste">
+        <test-directive type="email" name="email" label="e-mail" model="user.post.email" errors="user.errors.email" validation="required min:3" ></test-directive>
+            <input type="submit"/>
+        </form>
+        {{ user.post.email }}
+        <button ng-click="testefu()">Teste</button>
     </div>
 </div>
 
