@@ -9,8 +9,10 @@ var config ={
     public_folder:  './public/bower_components/',
      views_folder:  './app/views/assets/',
      scripts_file:  './app/views/assets/scripts.blade.php',
-      styles_file:  './app/views/assets/styles.blade.php'
-}
+      styles_file:  './app/views/assets/styles.blade.php',
+     angular_file:  './app/views/assets/angular.blade.php',
+  angular_s_files:  './public/assets/angular/**/*.js'
+};
 
 /*
     Gulp task copy JS and CSS files
@@ -33,5 +35,11 @@ gulp.task('copy', function(){
      */
     gulp.src(mainBowerFiles(), { base: './bower_components/' })
         .pipe(inject(config.styles_file, { addPrefix: "<% url('/') %>", addRootSlash: false}))
+        .pipe(gulp.dest(config.views_folder));
+    /*
+        Add AngularJS files into angular assets file
+     */
+    gulp.src(config.angular_s_files, { base: './public/assets/' })
+        .pipe(inject(config.angular_file, { ignorePath: 'public/', addPrefix: "<% url('/') %>/", addRootSlash: false }))
         .pipe(gulp.dest(config.views_folder));
 });
