@@ -1,0 +1,6 @@
+<div class="form-group">
+    <label class="control-label" for="{{ name }}">{{ label }}</label>
+    <input class="form-control" type="{{ type }}" id="{{ name }}" name="{{ name }}" ng-model="model"/>
+    <p class="help-block" ng-show="errors" ng-repeat="error in errors">{{ error }}</p>
+    <ng-transclude ng-transclude></ng-transclude>
+</div>

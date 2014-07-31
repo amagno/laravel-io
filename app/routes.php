@@ -46,7 +46,7 @@ Route::get('/queue', function()
 
 Route::controller('/test', 'TestController');
 
-Route::get('/testdirective', function()
+Route::get('/directive', function()
 {
         return View::make('tests.directive');
 });

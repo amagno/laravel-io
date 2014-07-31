@@ -7,15 +7,19 @@
     <title></title>
 
     @include('assets.styles')
+
 </head>
 <body>
 <div class="container">
-
+    <!--CONTENT-->
     @yield('content')
-
+    <!--CONTENT-->
 </div>
 
     @include('assets.scripts')
+
+
+    @include('assets.angular')
 
 </body>
 </html>
