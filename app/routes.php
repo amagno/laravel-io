@@ -42,3 +42,21 @@ Route::get('/queue', function()
 {
      Queue::push('Jobs\MyFirstJob', ['message' => 'test']);
 });
+
+Route::get('/pub', function(){
+
+    return View::make('tests.main');
+});
+
+Route::post('/pubb' , function(){
+    $r = Redis::connection();
+
+    $msg = Input::get('msg');
+
+    if($msg){
+        $r->publish('laravel_messages', $msg);
+        $r->quit();
+        return Redirect::to('/pub')->with('laravel_return', 'Menssagem "' . $msg . '" enviada! ');
+    }
+
+});

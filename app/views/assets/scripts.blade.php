@@ -4,6 +4,6 @@
 <script src="<% url('/') %>/bower_components/bootswatch-dist/js/bootstrap.js"></script>
 <!-- endinject -->
 <!-- my scripts -->
-<script src="/socket/socket.io.js"></script>
+<script src="http://192.168.0.161:3001/socket.io/socket.io.js"></script>
 <script src="<% url('/') %>/assets/myscript.js"></script>
 <!-- my scripts -->
